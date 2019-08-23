@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ExtraPoints.MainPage"
+             Title="Gab Logo"
+             BackgroundImageSource="ic_mountain.jpg">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Frame BorderColor="Red"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       HasShadow="False"
+                       BackgroundColor="transparent">
+                    <Label HorizontalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           BackgroundColor="transparent">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text=" Here you "
+                                      FontSize="Large" />
+                                <Span Text="can place your own"
+                                      FontSize="Large" />
+                                <Span Text=" awesome image!"
+                                      FontSize="Large"
+                                      FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+
+                <Button ImageSource="ic_cloud"
+                        Text="Weather"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="WhiteSmoke"
+                        CornerRadius="5"
+                        ContentLayout="Top, 10"
+                        Padding="5"
+                        Opacity="0.8" />
+                
+                <Button ImageSource="ic_location"
+                        Text="Location"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        BackgroundColor="WhiteSmoke"
+                        CornerRadius="5"
+                        ContentLayout="Top, 10"
+                        Padding="5"
+                        Opacity="0.8" />
+                
+                <Button ImageSource="ic_group"
+                        Text="Crew"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        BackgroundColor="WhiteSmoke"
+                        CornerRadius="5"
+                        ContentLayout="Top, 10"
+                        Padding="5"
+                        Opacity="0.8" />
+                
+                <Button ImageSource="ic_radio"
+                        Text="Radio"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        BackgroundColor="WhiteSmoke"
+                        CornerRadius="5"
+                        ContentLayout="Top, 10"
+                        Padding="5"
+                        Opacity="0.8" />
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
