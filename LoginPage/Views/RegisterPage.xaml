@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginPage.Views.RegisterPage">
+
+    <ScrollView>
+        <StackLayout VerticalOptions="Center">
+            <Image Source="ic_gablogo_transpb"
+                   HeightRequest="150"
+                   WidthRequest="150"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Entry Placeholder="Name"
+                   Text="{Binding UserAuth.UserName}"
+                   x:Name="name"
+                   Margin="20,0"
+                   Keyboard="Text" />
+
+            <Label Text="Name field is empty"
+                   Style="{StaticResource ErrorlblStyle}"
+                   IsVisible="{Binding NameVisibility, Mode=TwoWay}" />
+            
+            <Entry Placeholder="Email"
+                   Text="{Binding UserAuth.UserEmail}"
+                   x:Name="email"
+                   Margin="20,0"
+                   Keyboard="Email" />
+
+            <Label Text="Email field is empty"
+                   Style="{StaticResource ErrorlblStyle}"
+                   IsVisible="{Binding EmailVisibility, Mode=TwoWay}" />
+
+            <Entry Placeholder="Password"
+                   Text="{Binding UserAuth.UserPassword}"
+                   x:Name="password"
+                   Margin="20,0"
+                   IsPassword="true" />
+
+            <Label Text="Password field is empty"
+                   Style="{StaticResource ErrorlblStyle}"
+                   IsVisible="{Binding PasswordVisibility, Mode=TwoWay}" />
+            
+            <Entry Placeholder="Confirm Password"
+                   Text="{Binding UserAuth.UserConfirmPassword}"
+                   x:Name="confirmpassword"
+                   Margin="20,0"
+                   IsPassword="true" />
+
+            <Label Text="{Binding ConfirmPasswordlbl, Mode=TwoWay}"
+                   Style="{StaticResource ErrorlblStyle}"
+                   IsVisible="{Binding ConfirmPasswordVisibility, Mode=TwoWay}" />
+
+            <Button x:Name="registerbtn"
+                    Style="{StaticResource MainButton}"
+                    Text="Sign in"
+                    Command="{Binding RegisterCommand}" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
