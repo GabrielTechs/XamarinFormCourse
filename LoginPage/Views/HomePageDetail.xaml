@@ -4,13 +4,38 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="LoginPage.Views.HomePageDetail">
-    <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Button x:Name="backtologinbtn"
-                    Style="{StaticResource MainButton}"
-                    Text="Take me Back!"
-                    Command="{Binding BacktoLoginCommand}" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="LoginPage.Views.HomePageDetail"
+             Title="Contacts">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="addbtn"
+                     Order="Primary"
+                     Text="ADD"
+                     Priority="0"
+                     Command="{Binding AddContactCommand}" />
+    </ContentPage.ToolbarItems>
+    
+    <ListView ItemsSource="{Binding Contacts}"
+              x:Name="listv"
+              SelectedItem="{Binding SelectedContact}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="More"
+                                  Command="{Binding Path=BindingContext.MoreOptionsCommand, Source={x:Reference listv}}"
+                                  CommandParameter="{Binding .}" />
+                        <MenuItem Text="Delete"
+                                  Command="{Binding Path=BindingContext.DeleteElementCommand, Source={x:Reference listv}}"
+                                  CommandParameter="{Binding .}"
+                                  IsDestructive="True" />
+                    </ViewCell.ContextActions>
+
+                    <StackLayout>
+                        <Label Text="{Binding FirstName}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

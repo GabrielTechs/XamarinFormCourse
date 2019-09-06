@@ -51,6 +51,7 @@ namespace LoginPage.ViewModels
                 else
                 {
                     await App.Current.MainPage.DisplayAlert("Congratulations!", $"{UserAuth.UserName} you have a Gabapp account", "Ok");
+                    await App.Current.MainPage.Navigation.PopAsync();
                 }
             });
         }

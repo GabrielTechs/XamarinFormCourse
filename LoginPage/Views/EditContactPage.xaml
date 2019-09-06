@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginPage.Views.EditContactPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="addbtn"
+                     Order="Primary"
+                     Text="Save"
+                     Priority="0"
+                     Command="{Binding EditContactCommand}" />
+        <ToolbarItem Name="addbtn"
+                     Order="Secondary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Frame BackgroundColor="Transparent"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Padding="12">
+                <Image Source="ic_person_outline">
+                </Image>
+            </Frame>
+
+            <Entry Placeholder="FirstName"
+                   Text="{Binding NewContact.FirstName}"
+                   x:Name="firstname"
+                   Keyboard="Text"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" />
+
+            <Entry Placeholder="LastName"
+                   Text="{Binding NewContact.LastName}"
+                   x:Name="lastname"
+                   Keyboard="Text"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" />
+
+            <Frame BackgroundColor="Transparent"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   Padding="12"
+                   Margin="0,5">
+                <Image Source="ic_location_city">
+                </Image>
+            </Frame>
+
+            <Entry Placeholder="Company"
+                   Text="{Binding NewContact.Company}"
+                   x:Name="company"
+                   Keyboard="Text"
+                   Margin="0,5"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" />
+
+            <Frame BackgroundColor="Transparent"
+                   Grid.Row="4"
+                   Grid.Column="0"
+                   Padding="12">
+                <Image Source="ic_phone">
+                </Image>
+            </Frame>
+
+            <Entry Placeholder="Phone"
+                   Text="{Binding NewContact.Phone}"
+                   x:Name="phonenumber"
+                   Keyboard="Telephone"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" />
+
+            <Picker Title="Mobile"
+                    ItemsSource="{Binding PhoneTypeList}"
+                    ItemDisplayBinding="{Binding PhoneTypeValue}"
+                    Grid.Row="5"
+                    Grid.Column="1" />
+
+            <Frame BackgroundColor="Transparent"
+                   Grid.Row="6"
+                   Grid.Column="0"
+                   Padding="12"
+                   Margin="0,5,0,0">
+                <Image Source="ic_mail_outline">
+                </Image>
+            </Frame>
+
+            <Entry Placeholder="Email"
+                   Text="{Binding NewContact.Email}"
+                   x:Name="email"
+                   Keyboard="Email"
+                   Margin="0,5,0,0"
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" />
+
+            <Picker Title="Home"
+                    ItemsSource="{Binding EmailTypeList}"
+                    ItemDisplayBinding="{Binding EmailTypeValue}"
+                    Grid.Row="7"
+                    Grid.Column="1" />
+
+            <Label Text="More fields"
+                   TextColor="{StaticResource Key=Primary}"
+                   Margin="0,15"
+                   Grid.Row="8"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

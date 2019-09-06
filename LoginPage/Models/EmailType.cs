@@ -4,7 +4,9 @@ using System.Text;
 
 namespace LoginPage.Models
 {
-    class HomePageModel
+    class EmailType
     {
+        public int Key { get; set; }
+        public string EmailTypeValue { get; set; }
     }
 }
