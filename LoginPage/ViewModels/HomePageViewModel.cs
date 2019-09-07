@@ -52,15 +52,15 @@ namespace LoginPage.ViewModels
             {
                 //Action sheet sample
                 var result = await App.Current.MainPage.DisplayActionSheet
-                (null, "Cancel", null, $"Call {SelectedContact.Phone}", "Edit");
+                (null, "Cancel", null, $"Call {param.Phone}", "Edit");
 
-                if (result == $"Call {SelectedContact.Phone}")
+                if (result == $"Call {param.Phone}")
                 {
-                    Device.OpenUri(new Uri(String.Format("tel:{0}", $"{SelectedContact.Phone}")));
+                    Device.OpenUri(new Uri(String.Format("tel:{0}", $"{param.Phone}")));
                 }
                 if (result == "Edit")
                 {
-                    MessagingCenter.Send<HomePageViewModel, Contact>(this, "NewContactToEdit", SelectedContact);
+                    MessagingCenter.Send<HomePageViewModel, Contact>(this, "NewContactToEdit", param);
                     await App.Current.MainPage.Navigation.PushAsync(new EditContactPage());
                 }
             });

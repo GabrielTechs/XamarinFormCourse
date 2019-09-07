@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="LoginPage.Views.EditContactPage">
+             x:Class="LoginPage.Views.EditContactPage"
+             Title="Edit contact">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="addbtn"
@@ -45,7 +46,6 @@
 
             <Entry Placeholder="FirstName"
                    Text="{Binding NewContact.FirstName}"
-                   x:Name="firstname"
                    Keyboard="Text"
                    Grid.Row="1"
                    Grid.Column="1"
@@ -53,7 +53,6 @@
 
             <Entry Placeholder="LastName"
                    Text="{Binding NewContact.LastName}"
-                   x:Name="lastname"
                    Keyboard="Text"
                    Grid.Row="2"
                    Grid.Column="1"
