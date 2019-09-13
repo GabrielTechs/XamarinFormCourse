@@ -25,6 +25,11 @@
                TextColor="{StaticResource Primary}"
                HorizontalOptions="CenterAndExpand"
                FontSize="26" />
+
+        <Button x:Name="NewBeeAPI"
+                Style="{StaticResource MainButton}"
+                Text="NewBeeAPI"
+                Command="{Binding NweBeeAPICommand}" />
     </StackLayout>
 
 </ContentPage>

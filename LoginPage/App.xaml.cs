@@ -13,7 +13,7 @@ namespace LoginPage
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new NewBeePhonesPage());
         }
 
         protected override void OnStart()

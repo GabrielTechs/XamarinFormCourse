@@ -1,4 +1,6 @@
-﻿using LoginPage.ViewModels;
+﻿using LoginPage.Services;
+using LoginPage.ViewModels;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +13,12 @@ using Xamarin.Forms.Xaml;
 namespace LoginPage.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePageMaster : ContentPage
+    public partial class NewBeePhonesPage : ContentPage
     {
-        public HomePageMaster()
+        public NewBeePhonesPage()
         {
             InitializeComponent();
-            BindingContext = new HomePageViewModel();
+            BindingContext = new NewBeePhonesViewModel();
         }
     }
 }

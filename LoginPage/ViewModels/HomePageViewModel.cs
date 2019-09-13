@@ -30,6 +30,8 @@ namespace LoginPage.ViewModels
         public ObservableCollection<Contact> Contacts { get; set; } = new ObservableCollection<Contact>();
         public ICommand DeleteElementCommand { get; set; }
         public ICommand MoreOptionsCommand { get; set; }
+        public ICommand NweBeeAPICommand { get; set; }
+
 
         public HomePageViewModel()
         {
@@ -80,6 +82,10 @@ namespace LoginPage.ViewModels
                 {
                     await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());
                 });
+            NweBeeAPICommand = new Command(async () =>
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new NewBeePhonesPage());
+            });
         }
         async System.Threading.Tasks.Task OnSelectItemAsync(Contact contact)
         {
