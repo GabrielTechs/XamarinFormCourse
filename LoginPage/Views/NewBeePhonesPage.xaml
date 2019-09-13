@@ -13,16 +13,6 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <ViewCell.ContextActions>
-                        <MenuItem Text="More"
-                                  Command="{Binding Path=BindingContext.MoreOptionsCommand, Source={x:Reference listv}}"
-                                  CommandParameter="{Binding .}" />
-                        <MenuItem Text="Delete"
-                                  Command="{Binding Path=BindingContext.DeleteElementCommand, Source={x:Reference listv}}"
-                                  CommandParameter="{Binding .}"
-                                  IsDestructive="True" />
-                    </ViewCell.ContextActions>
-
                     <StackLayout>
                         <Label Text="{Binding telefono, StringFormat='Phone: {0}'}" />
                     </StackLayout>

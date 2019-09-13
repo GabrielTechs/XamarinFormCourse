@@ -10,6 +10,6 @@ namespace LoginPage.Services
 {
     public interface IApiService
     {
-        Task<PhonesDirectory> GetDirectories();
+        Task<List<PhonesDirectory>> GetDirectories();
     }
 }

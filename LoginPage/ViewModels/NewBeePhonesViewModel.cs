@@ -15,10 +15,12 @@ namespace LoginPage.ViewModels
 {
     public class NewBeePhonesViewModel : INotifyPropertyChanged
     {
+
         IApiService apiService = new ApiService();
         public ICommand GetDirectoryCommand { get; set; }
         public string Directory { get; set; }
-        public ObservableCollection<PhonesDirectory> Directories { get; set; } = new ObservableCollection<PhonesDirectory>();
+        public ObservableCollection<List<PhonesDirectory>> Directories { get; set; } = new ObservableCollection<List<PhonesDirectory>>();
+
         PhonesDirectory directory;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -46,7 +48,6 @@ namespace LoginPage.ViewModels
 
             GetDirectoryCommand.Execute(null);
         }
-
 
         async Task GetDirectory()
         {

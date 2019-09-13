@@ -17,12 +17,11 @@ namespace LoginPage.Services
         {
         }
 
-        public async Task<PhonesDirectory> GetDirectories()
+        public async Task<List<PhonesDirectory>> GetDirectories()
         {
             HttpClient httpClient = new HttpClient();
             var response = await httpClient.GetStringAsync("https://api-newbee.herokuapp.com/directorio");
-            return JsonConvert.DeserializeObject<PhonesDirectory>(response);
+            return JsonConvert.DeserializeObject<List<PhonesDirectory>>(response);
         }
-
     }
 }
